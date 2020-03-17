@@ -1,0 +1,26 @@
+spring:
+  profiles:
+   active:
+   - dev
+---
+server:
+  port: 8201
+spring:
+  profiles: dev  #开发环境
+  application:
+   name: cloud-config-clien-shiert
+eureka:
+  client:
+    service-url:
+      defaultZone: http://http://eureka7001.com:7001/eureka/
+---
+server:
+  port: 8203
+spring:
+  profiles: test  #测试环境
+  application:
+   name: cloud-config-client-shier
+eureka:
+  client:
+    service-url:
+      defaultZone: http://http://eureka7002.com:7002/eureka/
